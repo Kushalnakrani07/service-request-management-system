@@ -1,9 +1,10 @@
-<<<<<<< HEAD
+
 # 🛠️ Service Request Management System (Project #127)
 
 > **B.Tech Computer Science Engineering — Backend Development (Node.js, Express.js & MongoDB)**  
 > **Course:** ITM Skills University | School of FutureTech  
-> **Author / Student:** Kushal Nakrani  
+> **Student:** Kushal Nakrani
+> **Roll No:150096725176
 > **Stack:** Node.js • Express.js • MongoDB / Mongoose • JWT • React 19 • Vite  
 
 ---
