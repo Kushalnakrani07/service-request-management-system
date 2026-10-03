@@ -1,0 +1,90 @@
+{
+  "clientName": "Thunder Client",
+  "collectionName": "Service Request Management System API",
+  "dateExported": "2026-09-30T16:30:00.000Z",
+  "version": "1.1",
+  "folders": [],
+  "requests": [
+    {
+      "name": "1. Health Check",
+      "method": "GET",
+      "url": "http://localhost:5001/api/health",
+      "headers": []
+    },
+    {
+      "name": "2. Customer Login",
+      "method": "POST",
+      "url": "http://localhost:5001/api/auth/login",
+      "headers": [{ "name": "Content-Type", "value": "application/json" }],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"email\": \"customer@example.com\",\n  \"password\": \"password123\"\n}"
+      }
+    },
+    {
+      "name": "3. Provider Login (Plumber)",
+      "method": "POST",
+      "url": "http://localhost:5001/api/auth/login",
+      "headers": [{ "name": "Content-Type", "value": "application/json" }],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"email\": \"plumber@example.com\",\n  \"password\": \"password123\"\n}"
+      }
+    },
+    {
+      "name": "4. Customer - Create Request",
+      "method": "POST",
+      "url": "http://localhost:5001/api/requests",
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" },
+        { "name": "Authorization", "value": "Bearer {{YOUR_JWT_TOKEN}}" }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"title\": \"Kitchen Sink Leakage\",\n  \"description\": \"Water dripping heavily from the drain pipe under the sink.\",\n  \"category\": \"plumbing\",\n  \"priority\": \"high\",\n  \"serviceAddress\": \"Flat 402, Lotus Residency, Mumbai\",\n  \"customerPhone\": \"+91 98765 43210\"\n}"
+      }
+    },
+    {
+      "name": "5. Customer - Get My Requests",
+      "method": "GET",
+      "url": "http://localhost:5001/api/requests/my",
+      "headers": [
+        { "name": "Authorization", "value": "Bearer {{YOUR_JWT_TOKEN}}" }
+      ]
+    },
+    {
+      "name": "6. Provider - Get Assigned Requests",
+      "method": "GET",
+      "url": "http://localhost:5001/api/requests/my",
+      "headers": [
+        { "name": "Authorization", "value": "Bearer {{YOUR_JWT_TOKEN}}" }
+      ]
+    },
+    {
+      "name": "7. Provider - Update Status to In-Progress",
+      "method": "PATCH",
+      "url": "http://localhost:5001/api/requests/{{REQUEST_ID}}/status",
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" },
+        { "name": "Authorization", "value": "Bearer {{YOUR_JWT_TOKEN}}" }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"status\": \"in-progress\",\n  \"note\": \"Technician arrived on site\"\n}"
+      }
+    },
+    {
+      "name": "8. Provider - Update Status to Completed",
+      "method": "PATCH",
+      "url": "http://localhost:5001/api/requests/{{REQUEST_ID}}/status",
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" },
+        { "name": "Authorization", "value": "Bearer {{YOUR_JWT_TOKEN}}" }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"status\": \"completed\",\n  \"resolutionNotes\": \"Replaced the drain pipe joint washer. Leak fully fixed.\"\n}"
+      }
+    }
+  ]
+}
