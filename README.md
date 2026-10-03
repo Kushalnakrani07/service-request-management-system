@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🛠️ Service Request Management System (Project #127)
 
 > **B.Tech Computer Science Engineering — Backend Development (Node.js, Express.js & MongoDB)**  
@@ -497,3 +498,7 @@ service-request-management-system/
 - [x] **Postman & Thunder Client Collections:** Fully exported with test assertions.
 - [x] **Detailed Beginner Comments:** Comprehensive educational comments in every backend and frontend file.
 - [x] **Academic README for Professor:** Complete evaluation report with architecture, ER diagrams, and Viva Q&A.
+=======
+# service-request-management-system-
+The following is a full stack web app created as a mini project for university exams
+>>>>>>> 199905d87a98ebf480874b7f13961757369dd047
